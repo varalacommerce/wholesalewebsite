@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://varalacommerce.com/sitemap.xml
