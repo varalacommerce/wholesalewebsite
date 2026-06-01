@@ -1,6 +1,6 @@
-# Varala Commerce Website
+# Varala Commerce LLC Website
 
-A Vue.js-powered static front-end website for `varalacommerce.com`, a USA-based wholesale reselling business.
+A Vue.js-powered static front-end website for `varalacommerce.com`, a USA-based wholesale distribution business.
 
 ## Pages
 
@@ -8,7 +8,7 @@ A Vue.js-powered static front-end website for `varalacommerce.com`, a USA-based 
 - About Us
 - Product Catalog
 - Contact Us
-- Written Policy
+- Purchasing Policy
 - Delivery Policy
 - Privacy Policy
 - Terms & Conditions

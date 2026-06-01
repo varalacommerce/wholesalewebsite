@@ -5,99 +5,104 @@ const navItems = [
   { label: 'About Us', page: 'about' },
   { label: 'Product Catalog', page: 'catalog' },
   { label: 'Contact Us', page: 'contact' },
-  { label: 'Written Policy', page: 'written-policy' },
+];
+
+const footerPolicies = [
+  { label: 'Purchasing Policy', page: 'purchasing-policy' },
   { label: 'Delivery Policy', page: 'delivery-policy' },
   { label: 'Privacy Policy', page: 'privacy-policy' },
-  { label: 'T&C', page: 'terms' },
+  { label: 'Terms & Conditions', page: 'terms' },
+];
+
+const servedGroups = [
+  'Amazon Sellers',
+  'Ecommerce Businesses',
+  'Retail Stores',
+  'Online Resellers',
+  'Bulk Inventory Buyers',
+  'General Merchandise Businesses',
+];
+
+const homeStrengths = [
+  'USA-Based Wholesale Business',
+  'Bulk Inventory Solutions',
+  'Professional Order Communication',
+  'Flexible Wholesale Purchasing',
+  'Reliable Product Inquiry Process',
+  'Ecommerce-Friendly Supply Support',
+];
+
+const aboutStrengths = [
+  'USA-Based Business',
+  'Professional Communication',
+  'Ecommerce-Friendly Purchasing',
+  'Bulk Inventory Support',
+  'Streamlined Wholesale Process',
+  'Reliable Business Operations',
+];
+
+const industries = [
+  'Ecommerce Sellers',
+  'Online Retailers',
+  'Wholesale Buyers',
+  'Resellers',
+  'Retail Businesses',
+];
+
+const processSteps = [
+  'Browse Product Categories',
+  'Submit Product Inquiry',
+  'Receive Product Availability & Pricing',
+  'Order Coordination & Delivery',
 ];
 
 const categories = [
-  {
-    name: 'Baby and Kids',
-    text: 'Bulk lots for baby essentials, toys, soft goods, wipes, towels, personal care, and family-focused resale categories.',
-    products: ['Baby powders', 'Baby towels and clothing', 'Creams, oils, wipes', 'Soft toys and accessories'],
-    color: '#f4b400',
-  },
-  {
-    name: 'Sports and Outdoors',
-    text: 'Seasonal and everyday sporting goods for buyers serving online marketplaces, local stores, and resale customers.',
-    products: ['Tennis balls and golf balls', 'Outdoor activity items', 'Fitness accessories', 'Seasonal sports goods'],
-    color: '#1f8a70',
-  },
-  {
-    name: 'DIY and Tools',
-    text: 'Practical tool and home improvement inventory for trade buyers, household retailers, and marketplace resellers.',
-    products: ['Screwdrivers and tape measures', 'Screws, tape, door handles', 'Electrical tools and drills', 'Paint brushes and dust sheets'],
-    color: '#d95f32',
-  },
-  {
-    name: 'Health and Household',
-    text: 'High-demand household products with broad consumer appeal and repeat-purchase potential.',
-    products: ['Cleaning supplies', 'Paper goods', 'Personal care basics', 'Household multipacks'],
-    color: '#4b6cb7',
-  },
-  {
-    name: 'Beauty and Personal Care',
-    text: 'Wholesale beauty, grooming, skincare, and hygiene items suitable for resale buyers and online storefronts.',
-    products: ['Hair care', 'Skin care', 'Oral care', 'Grooming accessories'],
-    color: '#a855f7',
-  },
-  {
-    name: 'Home and Kitchen',
-    text: 'Useful home, kitchen, storage, and lifestyle products available in case-pack or mixed-lot quantities.',
-    products: ['Kitchen accessories', 'Storage items', 'Home care products', 'Small household goods'],
-    color: '#0f766e',
-  },
-];
-
-const strengths = [
-  'USA-based wholesale resale operation',
-  'Bulk product lots for qualified buyers',
-  'Case-pack and mixed-lot buying options',
-  'Professional order communication',
-  'Catalog-style inquiry process',
-  'Support for online resale workflows',
+  'Health & Household',
+  'Grocery & Gourmet',
+  'Home & Kitchen',
+  'Beauty & Personal Care',
+  'Pet Supplies',
+  'Baby Products',
+  'General Merchandise',
 ];
 
 const policySections = {
-  'written-policy': {
-    title: 'Written Policy',
-    subtitle: 'Return, refund, and buyer communication policy for Varala Commerce wholesale orders.',
+  'purchasing-policy': {
+    title: 'Purchasing Policy',
     blocks: [
-      ['Order Confirmation', 'All wholesale orders are reviewed after buyer inquiry. Product availability, quantity, price, pickup or delivery terms, and payment requirements must be confirmed in writing before an order is considered accepted.'],
-      ['Returns and Refunds', 'Because wholesale inventory is sold in bulk lots, returns are reviewed case by case. Products must be unused, unopened, and in the same condition received. Approved refunds may exclude delivery, handling, and restocking costs.'],
-      ['Damaged or Incorrect Items', 'If an order arrives damaged or does not match the confirmed order details, buyers should contact Varala Commerce as soon as possible with the order number, photos, and a description of the issue.'],
-      ['Business Buyer Responsibility', 'Buyers are responsible for reviewing product details, resale requirements, shipping terms, and marketplace rules before purchasing inventory.'],
+      'Product availability may vary',
+      'Orders subject to confirmation',
+      'Pricing may change without notice',
+      'Wholesale inquiries reviewed individually',
+      'Buyer responsible for resale compliance',
     ],
   },
   'delivery-policy': {
     title: 'Delivery Policy',
-    subtitle: 'How bulk inventory delivery, pickup, and shipping coordination works.',
     blocks: [
-      ['Processing Time', 'Orders are generally prepared after written confirmation and payment clearance. Processing time depends on product availability, lot size, labeling needs, and delivery or pickup scheduling.'],
-      ['Domestic Delivery', 'Varala Commerce is focused on wholesale resale within the United States. Delivery, freight, or pickup options are confirmed per order based on destination, order size, and carrier availability.'],
-      ['Shipping Rates', 'Shipping, freight, pallet, or handling costs are calculated separately unless otherwise stated in the written quote. Buyers will receive delivery details before final order confirmation.'],
-      ['International Shipping', 'International shipping is not offered by default. Buyers outside the United States may contact us, but orders are accepted only when logistics and compliance requirements can be handled clearly.'],
+      'Processing timelines vary by order',
+      'Shipping methods depend on order size',
+      'Tracking shared after dispatch',
+      'Delivery timing may vary',
     ],
   },
   'privacy-policy': {
     title: 'Privacy Policy',
-    subtitle: 'How Varala Commerce handles information submitted through this website.',
     blocks: [
-      ['Information We Collect', 'We may collect your name, company name, email address, phone number, delivery location, product interests, and messages submitted through the contact form.'],
-      ['How We Use Information', 'We use submitted information to respond to buyer inquiries, prepare quotes, discuss product availability, coordinate orders, and improve business communication.'],
-      ['Information Sharing', 'We do not sell personal information. Information may be shared only when needed for order processing, delivery coordination, payment verification, legal compliance, or business operations.'],
-      ['Data Protection', 'We take reasonable steps to protect buyer information and keep communications limited to legitimate business purposes related to wholesale resale.'],
+      'We may collect customer information submitted through forms, including names, business details, email addresses, phone numbers, product interests, and messages.',
+      'We may use cookies or similar browser technologies to support basic website functionality and improve the browsing experience.',
+      'Customer information is used for product inquiries, email communication, quote follow-up, order coordination, and business support.',
+      'Varala Commerce LLC takes reasonable steps to protect customer information and does not sell personal information.',
     ],
   },
   terms: {
     title: 'Terms & Conditions',
-    subtitle: 'Terms for using this website and requesting wholesale inventory from Varala Commerce.',
     blocks: [
-      ['Website Use', 'This website is provided for business information and wholesale inquiry purposes. Submitting a form does not guarantee product availability, pricing, credit approval, or order acceptance.'],
-      ['Wholesale Orders', 'All orders are subject to stock availability, minimum quantity requirements, payment confirmation, and written approval by Varala Commerce.'],
-      ['Product Information', 'Product categories shown on this website are examples of inventory areas we may handle. Actual brands, SKUs, quantities, and pricing depend on current supply.'],
-      ['Limitation of Liability', 'Buyers are responsible for confirming resale suitability, marketplace restrictions, product compliance, and destination requirements before purchase.'],
+      'This website is provided for business information and wholesale inquiry purposes.',
+      'Product inquiry terms are subject to review by Varala Commerce LLC.',
+      'Pricing is subject to change without notice.',
+      'Inventory availability is not guaranteed.',
+      'Varala Commerce LLC is not liable for resale decisions, marketplace restrictions, supplier delays, or indirect business losses.',
     ],
   },
 };
@@ -111,22 +116,40 @@ createApp({
   data() {
     return {
       navItems,
+      footerPolicies,
+      servedGroups,
+      homeStrengths,
+      aboutStrengths,
+      industries,
+      processSteps,
       categories,
-      strengths,
       policySections,
       icons,
       currentPage: 'home',
-      form: { name: '', company: '', phone: '', email: '', address: '', message: '' },
       submitted: false,
+      catalogForm: {
+        fullName: '',
+        businessName: '',
+        email: '',
+        productCategory: '',
+        estimatedQuantity: '',
+        message: '',
+      },
+      contactForm: {
+        name: '',
+        businessName: '',
+        email: '',
+        phone: '',
+        message: '',
+      },
     };
   },
   computed: {
     policyPage() {
       return this.policySections[this.currentPage];
     },
-    formMessage() {
-      if (!this.submitted) return 'Send your wholesale inquiry and we will respond with availability and next steps.';
-      return `Thank you, ${this.form.name || 'buyer'}. Your inquiry has been prepared for Varala Commerce.`;
+    successMessage() {
+      return 'Thank you. Your inquiry has been received. Our team will contact you shortly.';
     },
   },
   mounted() {
@@ -139,11 +162,16 @@ createApp({
   methods: {
     syncRoute() {
       const page = window.location.hash.replace('#/', '') || 'home';
-      this.currentPage = this.navItems.some((item) => item.page === page) ? page : 'home';
+      const pages = [...this.navItems, ...this.footerPolicies].map((item) => item.page);
+      this.currentPage = pages.includes(page) ? page : 'home';
+      this.submitted = false;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
     goTo(page) {
       window.location.hash = `#/${page}`;
+    },
+    scrollToCatalogForm() {
+      document.getElementById('catalog-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
     submitForm() {
       this.submitted = true;
@@ -152,177 +180,208 @@ createApp({
   template: `
     <div class="site-shell">
       <header class="nav">
-        <button class="brand" @click="goTo('home')" aria-label="Varala Commerce home">
+        <button class="brand" @click="goTo('home')" aria-label="Varala Commerce LLC home">
           <span class="brand-mark">VC</span>
-          <span>Varala Commerce</span>
+          <span>Varala Commerce LLC</span>
         </button>
         <nav aria-label="Primary navigation">
-          <button v-for="item in navItems" :key="item.page" :class="{ active: currentPage === item.page }" @click="goTo(item.page)">
+          <button
+            v-for="item in navItems"
+            :key="item.page"
+            :class="{ active: currentPage === item.page }"
+            @click="goTo(item.page)"
+          >
             {{ item.label }}
           </button>
         </nav>
       </header>
 
       <main>
-        <section v-if="currentPage === 'home'" class="page home-page">
-          <div class="hero">
-            <div class="hero-copy">
-              <p class="eyebrow">USA wholesale reselling</p>
-              <h1>Welcome to Varala Commerce</h1>
-              <p class="hero-text">
-                We supply quality wholesale products in bulk for online retailers, Amazon sellers,
-                local resale buyers, and growing businesses across the United States.
+        <section v-if="currentPage === 'home'" class="home-page">
+          <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <p class="eyebrow">USA wholesale distribution</p>
+              <h1>Reliable Wholesale Distribution for Ecommerce & Retail Buyers</h1>
+              <p>
+                Varala Commerce LLC supports ecommerce sellers, online retailers, and resale businesses with dependable wholesale sourcing, inventory coordination, and professional order handling across the United States.
               </p>
               <div class="hero-actions">
                 <button class="button primary" @click="goTo('catalog')">
-                  View product catalog
+                  View Catalog
                   <span v-html="icons.arrow"></span>
                 </button>
-                <button class="button secondary" @click="goTo('contact')">Contact us</button>
+                <button class="button secondary dark" @click="goTo('contact')">Contact Us</button>
               </div>
-            </div>
-            <div class="hero-art">
-              <span class="dot dot-large"></span>
-              <span class="dot dot-small"></span>
-              <div class="warehouse-circle">
-                <span>Wholesale Inventory</span>
-              </div>
-            </div>
-          </div>
-
-          <section class="yellow-band">
-            <div class="circle-photo"><span>Bulk Supply</span></div>
-            <div>
-              <p class="eyebrow dark">Wholesale capability</p>
-              <h2>Scheduled delivery and dependable bulk supply.</h2>
-              <p>
-                From consumer goods to household essentials, Varala Commerce helps buyers source
-                practical inventory with clear communication, lot details, and delivery planning.
-              </p>
             </div>
           </section>
 
           <section class="section">
-            <div class="section-heading">
-              <p class="eyebrow">Why work with us</p>
-              <h2>Built for buyers who need inventory they can resell.</h2>
+            <div class="section-heading centered">
+              <h2>Who We Serve</h2>
             </div>
-            <div class="strength-grid">
-              <article v-for="item in strengths" :key="item">
+            <div class="card-grid">
+              <article v-for="group in servedGroups" :key="group" class="info-card">
                 <span v-html="icons.check"></span>
-                <p>{{ item }}</p>
+                <h3>{{ group }}</h3>
               </article>
             </div>
           </section>
+
+          <section class="section black-section">
+            <div class="section-heading centered">
+              <h2>Why Work With Us</h2>
+            </div>
+            <div class="card-grid">
+              <article v-for="item in homeStrengths" :key="item" class="info-card dark-card">
+                <span v-html="icons.check"></span>
+                <h3>{{ item }}</h3>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-heading centered">
+              <h2>Simple Wholesale Process</h2>
+            </div>
+            <ol class="process-list">
+              <li v-for="(step, index) in processSteps" :key="step">
+                <span>{{ index + 1 }}</span>
+                <p>{{ step }}</p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="cta-section">
+            <h2>Looking for reliable wholesale inventory?</h2>
+            <p>Contact our team to discuss product availability and wholesale purchasing options.</p>
+            <button class="button primary" @click="goTo('contact')">Contact Our Team</button>
+          </section>
         </section>
 
-        <section v-else-if="currentPage === 'about'" class="page text-page">
+        <section v-else-if="currentPage === 'about'" class="page">
           <div class="page-heading">
             <p class="eyebrow">About us</p>
-            <h1>Wholesale resale with practical buyer support.</h1>
-          </div>
-          <div class="copy-block">
+            <h1>About Varala Commerce LLC</h1>
             <p>
-              Varala Commerce is a USA-based wholesale reselling business focused on sourcing
-              and supplying bulk consumer products for resale buyers. Our goal is to make product
-              inquiry, lot review, order communication, and delivery planning simple for business customers.
-            </p>
-            <p>
-              We serve buyers who need categories such as baby and kids, health and household,
-              beauty and personal care, sports and outdoors, DIY tools, home and kitchen, and other
-              practical consumer goods.
-            </p>
-            <p>
-              Our website helps customers understand what we offer, submit wholesale inquiries,
-              and start a professional conversation before purchasing inventory.
+              Varala Commerce LLC is a USA-based wholesale distribution business focused on supporting ecommerce sellers, online retailers, and resale businesses. We work to provide dependable inventory sourcing, professional communication, and streamlined purchasing support for qualified buyers.
             </p>
           </div>
-          <div class="contact-card compact-contact">
-            <h2>Get in touch</h2>
-            <p>{{ formMessage }}</p>
-            <button class="button primary" @click="goTo('contact')">Open contact form</button>
-          </div>
+
+          <section class="content-panel">
+            <h2>Our Mission</h2>
+            <p>Our mission is to support ecommerce and retail businesses through reliable wholesale sourcing and professional inventory coordination.</p>
+          </section>
+
+          <section class="section compact">
+            <div class="section-heading">
+              <h2>Why Work With Us</h2>
+            </div>
+            <div class="card-grid">
+              <article v-for="item in aboutStrengths" :key="item" class="info-card">
+                <span v-html="icons.check"></span>
+                <h3>{{ item }}</h3>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-panel">
+            <h2>Industries We Support</h2>
+            <ul class="clean-list">
+              <li v-for="industry in industries" :key="industry">{{ industry }}</li>
+            </ul>
+          </section>
         </section>
 
-        <section v-else-if="currentPage === 'catalog'" class="page catalog-page">
+        <section v-else-if="currentPage === 'catalog'" class="page">
           <div class="page-heading">
             <p class="eyebrow">Product catalog</p>
-            <h1>Wholesale categories for resale buyers.</h1>
-            <p>
-              These are sample product areas Varala Commerce may source or supply in bulk.
-              Final availability, brands, quantities, and pricing are confirmed after inquiry.
-            </p>
+            <h1>Product Categories</h1>
+            <p>Product availability may vary based on supplier inventory and purchasing requirements.</p>
           </div>
 
-          <div class="catalog-list">
-            <article v-for="category in categories" :key="category.name" class="catalog-row">
-              <div>
-                <h2>{{ category.name }}</h2>
-                <p>{{ category.text }}</p>
-                <p class="mini-heading">Here are a few items we may sell:</p>
-                <ul>
-                  <li v-for="product in category.products" :key="product">{{ product }}</li>
-                </ul>
-              </div>
-              <div class="category-photo" :style="{ '--accent': category.color }">
-                <span>{{ category.name.slice(0, 2) }}</span>
-              </div>
+          <div class="category-grid">
+            <article v-for="category in categories" :key="category" class="category-card">
+              <span v-html="icons.check"></span>
+              <h3>{{ category }}</h3>
             </article>
           </div>
+
+          <button class="button primary catalog-cta" @click="scrollToCatalogForm">Request Product Availability</button>
+
+          <form id="catalog-form" class="form-panel" @submit.prevent="submitForm">
+            <h2>Request Product Availability</h2>
+            <p v-if="submitted" class="success-message">{{ successMessage }}</p>
+            <label><span>Full Name</span><input v-model="catalogForm.fullName" type="text" required /></label>
+            <label><span>Business Name</span><input v-model="catalogForm.businessName" type="text" required /></label>
+            <label><span>Email Address</span><input v-model="catalogForm.email" type="email" required /></label>
+            <label>
+              <span>Product Category</span>
+              <select v-model="catalogForm.productCategory" required>
+                <option value="" disabled>Select a category</option>
+                <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
+              </select>
+            </label>
+            <label><span>Estimated Quantity</span><input v-model="catalogForm.estimatedQuantity" type="text" required /></label>
+            <label><span>Message</span><textarea v-model="catalogForm.message" rows="5" required></textarea></label>
+            <button class="button primary" type="submit">Submit Inquiry</button>
+          </form>
         </section>
 
-        <section v-else-if="currentPage === 'contact'" class="page contact-page">
-          <div class="page-heading centered">
-            <p class="eyebrow">Contact us</p>
-            <h1>Get in touch</h1>
-            <p>{{ formMessage }}</p>
+        <section v-else-if="currentPage === 'contact'" class="page">
+          <div class="page-heading">
+            <p class="eyebrow">Contact</p>
+            <h1>Contact Us</h1>
           </div>
-          <form class="contact-form" @submit.prevent="submitForm">
-            <label><span>Full name*</span><input v-model="form.name" type="text" autocomplete="name" placeholder="Full name" required /></label>
-            <label><span>Company name*</span><input v-model="form.company" type="text" placeholder="Company name" required /></label>
-            <label><span>Company number</span><input v-model="form.phone" type="tel" autocomplete="tel" placeholder="Phone number" /></label>
-            <label><span>Email*</span><input v-model="form.email" type="email" autocomplete="email" placeholder="Email" required /></label>
-            <label><span>Address*</span><input v-model="form.address" type="text" autocomplete="street-address" placeholder="Address" required /></label>
-            <label><span>Message*</span><textarea v-model="form.message" rows="5" placeholder="Tell us what products and quantities you need" required></textarea></label>
-            <button class="button primary" type="submit">Submit</button>
-          </form>
+          <div class="contact-layout">
+            <aside class="business-info">
+              <h2>Varala Commerce LLC</h2>
+              <p><strong>Email:</strong> <a href="mailto:sales@varalacommerce.com">sales@varalacommerce.com</a></p>
+              <p><strong>Location:</strong> Seattle, Washington, USA</p>
+              <p><strong>Hours:</strong> Monday - Friday | 9:00 AM - 5:00 PM PST</p>
+            </aside>
+
+            <form class="form-panel contact-form" @submit.prevent="submitForm">
+              <h2>Send Message</h2>
+              <p v-if="submitted" class="success-message">{{ successMessage }}</p>
+              <label><span>Name</span><input v-model="contactForm.name" type="text" required /></label>
+              <label><span>Business Name</span><input v-model="contactForm.businessName" type="text" required /></label>
+              <label><span>Email</span><input v-model="contactForm.email" type="email" required /></label>
+              <label><span>Phone Number</span><input v-model="contactForm.phone" type="tel" /></label>
+              <label><span>Message</span><textarea v-model="contactForm.message" rows="5" required></textarea></label>
+              <button class="button primary" type="submit">Send Message</button>
+            </form>
+          </div>
         </section>
 
         <section v-else class="page policy-page">
           <div class="page-heading">
-            <p class="eyebrow">Varala Commerce</p>
+            <p class="eyebrow">Policies</p>
             <h1>{{ policyPage.title }}</h1>
-            <p>{{ policyPage.subtitle }}</p>
           </div>
-          <div class="policy-copy">
-            <article v-for="block in policyPage.blocks" :key="block[0]">
-              <h2>{{ block[0] }}</h2>
-              <p>{{ block[1] }}</p>
-            </article>
-          </div>
+          <ul class="policy-list">
+            <li v-for="item in policyPage.blocks" :key="item">{{ item }}</li>
+          </ul>
         </section>
       </main>
 
       <footer class="site-footer">
         <div>
-          <strong>Varala Commerce</strong>
-          <p>USA wholesale reselling business</p>
-          <p>varalacommerce.com</p>
+          <h2>Varala Commerce LLC</h2>
+          <p>Wholesale distribution & inventory sourcing for ecommerce and retail businesses.</p>
+          <p><a href="mailto:sales@varalacommerce.com">sales@varalacommerce.com</a></p>
+          <p>Seattle, Washington, USA</p>
+          <p>Supporting ecommerce, retail, and resale businesses across the United States.</p>
         </div>
         <div>
-          <strong>Business</strong>
-          <p>Bulk inventory</p>
-          <p>Wholesale resale</p>
-          <p>Product inquiries</p>
+          <h3>Quick Links</h3>
+          <button v-for="item in navItems" :key="item.page" @click="goTo(item.page)">{{ item.label }}</button>
         </div>
         <div>
-          <strong>Policies</strong>
-          <button @click="goTo('written-policy')">Written Policy</button>
-          <button @click="goTo('delivery-policy')">Delivery Policy</button>
-          <button @click="goTo('privacy-policy')">Privacy Policy</button>
-          <button @click="goTo('terms')">Terms & Conditions</button>
+          <h3>Policies</h3>
+          <button v-for="item in footerPolicies" :key="item.page" @click="goTo(item.page)">{{ item.label }}</button>
         </div>
-        <p class="copyright">&copy; 2026 Varala Commerce. All rights reserved.</p>
+        <p class="copyright">&copy; 2026 Varala Commerce LLC. All rights reserved.</p>
       </footer>
     </div>
   `,
