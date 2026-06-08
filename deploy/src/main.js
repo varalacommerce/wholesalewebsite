@@ -336,7 +336,7 @@ createApp({
           <div class="contact-layout">
             <aside class="business-info">
               <h2>Varala Commerce LLC</h2>
-              <p><strong>Email:</strong> <a href="mailto:wholesale@varalacommerce.com">wholesale@varalacommerce.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:sales@varalacommerce.com">sales@varalacommerce.com</a></p>
               <p><strong>Location:</strong> Seattle, Washington, USA</p>
               <p><strong>Hours:</strong> Monday - Friday | 9:00 AM - 5:00 PM PST</p>
             </aside>
@@ -369,7 +369,7 @@ createApp({
         <div>
           <h2>Varala Commerce LLC</h2>
           <p>Wholesale distribution & inventory sourcing for ecommerce and retail businesses.</p>
-          <p><a href="mailto:wholesale@varalacommerce.com">wholesale@varalacommerce.com</a></p>
+          <p><a href="mailto:sales@varalacommerce.com">sales@varalacommerce.com</a></p>
           <p>Seattle, Washington, USA</p>
           <p>Supporting ecommerce, retail, and resale businesses across the United States.</p>
         </div>
