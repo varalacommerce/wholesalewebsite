@@ -66,6 +66,46 @@ const categories = [
   'General Merchandise',
 ];
 
+// Place category JPG cover images and optimized 3-4 second MP4 videos in
+// public/category-media/. Replace these paths to update a card's media.
+const categoryMedia = {
+  'Health & Household': {
+    video: './public/category-media/health-household.mp4',
+    image: './public/category-media/health-household.jpg',
+    alt: 'Health and household essentials including vitamins, tissues, sanitizer, and cleaning products',
+  },
+  'Grocery & Gourmet': {
+    video: './public/category-media/grocery-gourmet.mp4',
+    image: './public/category-media/grocery-gourmet.jpg',
+    alt: 'Premium grocery basket with produce, snacks, olive oil, and gourmet foods',
+  },
+  'Home & Kitchen': {
+    video: './public/category-media/home-kitchen.mp4',
+    image: './public/category-media/home-kitchen.jpg',
+    alt: 'Modern kitchen essentials including cookware, plates, utensils, and appliances',
+  },
+  'Beauty & Personal Care': {
+    video: './public/category-media/beauty-personal-care.mp4',
+    image: './public/category-media/beauty-personal-care.jpg',
+    alt: 'Luxury skincare, makeup, perfume, and personal care products',
+  },
+  'Pet Supplies': {
+    video: './public/category-media/pet-supplies.mp4',
+    image: './public/category-media/pet-supplies.jpg',
+    alt: 'Pet food, toys, leash, bowls, grooming items, and accessories',
+  },
+  'Baby Products': {
+    video: './public/category-media/baby-products.mp4',
+    image: './public/category-media/baby-products.jpg',
+    alt: 'Baby stroller, bottles, diapers, toys, and baby care essentials',
+  },
+  'General Merchandise': {
+    video: './public/category-media/general-merchandise.mp4',
+    image: './public/category-media/general-merchandise.jpg',
+    alt: 'Mixed assortment of useful everyday household and lifestyle products',
+  },
+};
+
 const policySections = {
   'purchasing-policy': {
     title: 'Purchasing Policy',
@@ -123,10 +163,15 @@ createApp({
       industries,
       processSteps,
       categories,
+      categoryMedia,
       policySections,
       icons,
       currentPage: 'home',
       submitted: false,
+      activeCategory: null,
+      categoryVideoErrors: {},
+      categoryImageErrors: {},
+      categoryVideoRefs: {},
       catalogForm: {
         fullName: '',
         businessName: '',
@@ -161,6 +206,7 @@ createApp({
   },
   methods: {
     syncRoute() {
+      this.stopCategoryPreview();
       const page = window.location.hash.replace('#/', '') || 'home';
       const pages = [...this.navItems, ...this.footerPolicies].map((item) => item.page);
       this.currentPage = pages.includes(page) ? page : 'home';
@@ -172,6 +218,56 @@ createApp({
     },
     scrollToCatalogForm() {
       document.getElementById('catalog-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+    isTouchPreviewDevice() {
+      return window.matchMedia('(hover: none), (pointer: coarse), (max-width: 980px)').matches;
+    },
+    isCategoryActive(category) {
+      return this.activeCategory === category;
+    },
+    setCategoryVideoRef(category, element) {
+      if (element) this.categoryVideoRefs[category] = element;
+      else delete this.categoryVideoRefs[category];
+    },
+    activateCategoryPreview(category) {
+      if (this.isTouchPreviewDevice()) return;
+      this.playCategoryPreview(category);
+    },
+    toggleCategoryPreview(category, force = false) {
+      if (!force && !this.isTouchPreviewDevice()) return;
+      if (this.activeCategory === category) {
+        this.stopCategoryPreview(category);
+        return;
+      }
+      this.playCategoryPreview(category);
+    },
+    playCategoryPreview(category) {
+      this.stopCategoryPreview();
+      this.activeCategory = category;
+      this.$nextTick(() => {
+        const video = this.categoryVideoRefs[category];
+        if (video && !this.categoryVideoErrors[category]) {
+          video.currentTime = 0;
+          video.play().catch(() => {
+            this.categoryVideoErrors[category] = true;
+          });
+        }
+      });
+    },
+    stopCategoryPreview(category = this.activeCategory) {
+      if (!category || this.activeCategory !== category) return;
+      const video = this.categoryVideoRefs[category];
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+      this.activeCategory = null;
+    },
+    handlePreviewVideoError(category) {
+      this.categoryVideoErrors[category] = true;
+    },
+    handlePreviewImageError(category) {
+      this.categoryImageErrors[category] = true;
     },
     submitForm() {
       this.submitted = true;
@@ -199,6 +295,17 @@ createApp({
       <main>
         <section v-if="currentPage === 'home'" class="home-page">
           <section class="hero">
+            <video
+              class="hero-video"
+              src="./public/warehouse-hero.webm"
+              poster="./public/warehouse-hero.png"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-hidden="true"
+            ></video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
               <p class="eyebrow">USA wholesale distribution</p>
@@ -301,9 +408,52 @@ createApp({
           </div>
 
           <div class="category-grid">
-            <article v-for="category in categories" :key="category" class="category-card">
-              <span v-html="icons.check"></span>
-              <h3>{{ category }}</h3>
+            <article
+              v-for="category in categories"
+              :key="category"
+              class="category-card"
+              :class="{
+                'has-cover': categoryMedia[category].image && !categoryImageErrors[category],
+                'is-previewing': isCategoryActive(category),
+              }"
+              role="button"
+              tabindex="0"
+              :aria-label="'Preview ' + category"
+              :aria-pressed="isCategoryActive(category)"
+              @mouseenter="activateCategoryPreview(category)"
+              @mouseleave="stopCategoryPreview(category)"
+              @click="toggleCategoryPreview(category)"
+              @focus="activateCategoryPreview(category)"
+              @blur="stopCategoryPreview(category)"
+            >
+              <div class="category-preview">
+                <img
+                  v-if="categoryMedia[category].image && !categoryImageErrors[category]"
+                  class="category-preview-image"
+                  :src="categoryMedia[category].image"
+                  :alt="categoryMedia[category].alt"
+                  loading="lazy"
+                  decoding="async"
+                  @error="handlePreviewImageError(category)"
+                />
+                <video
+                  v-if="isCategoryActive(category) && categoryMedia[category].video && !categoryVideoErrors[category]"
+                  :ref="(element) => setCategoryVideoRef(category, element)"
+                  class="category-preview-video"
+                  :src="categoryMedia[category].video"
+                  :poster="categoryMedia[category].image"
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  @error="handlePreviewVideoError(category)"
+                ></video>
+              </div>
+              <div class="category-card-overlay" aria-hidden="true"></div>
+              <div class="category-card-content">
+                <span v-html="icons.check"></span>
+                <h3>{{ category }}</h3>
+              </div>
             </article>
           </div>
 
