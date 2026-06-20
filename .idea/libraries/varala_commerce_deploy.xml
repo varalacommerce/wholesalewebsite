@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="varala-commerce-deploy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/varala-commerce-deploy.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

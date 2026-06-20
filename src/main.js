@@ -56,6 +56,99 @@ const processSteps = [
   'Order Coordination & Delivery',
 ];
 
+// Reusable 3D card images. Add or replace JPG files in public/card-media/
+// and update the matching path here to change a card's visual.
+const cardMedia = {
+  'Amazon Sellers': {
+    image: './public/card-media/amazon-sellers.jpg',
+    alt: 'Ecommerce seller workspace with inventory, shipping cartons, and barcode equipment',
+  },
+  'Ecommerce Businesses': {
+    image: './public/card-media/ecommerce-businesses.jpg',
+    alt: 'Multichannel ecommerce workspace with digital storefront devices and packaged products',
+  },
+  'Retail Stores': {
+    image: './public/card-media/retail-stores.jpg',
+    alt: 'Modern retail store with organized shelves, merchandise, and checkout equipment',
+  },
+  'Online Resellers': {
+    image: './public/card-media/online-resellers.jpg',
+    alt: 'Online reseller fulfillment workspace with products, photography equipment, and parcels',
+  },
+  'Bulk Inventory Buyers': {
+    image: './public/card-media/bulk-inventory-buyers.jpg',
+    alt: 'Large-scale warehouse inventory with pallets, cartons, and loading equipment',
+  },
+  'General Merchandise Businesses': {
+    image: './public/card-media/general-merchandise-businesses.jpg',
+    alt: 'Professional wholesale showroom with a varied assortment of everyday merchandise',
+  },
+  'USA-Based Wholesale Business': {
+    image: './public/card-media/amazon-sellers.jpg',
+    alt: 'USA-based wholesale inventory and ecommerce operations',
+  },
+  'Bulk Inventory Solutions': {
+    image: './public/card-media/bulk-inventory-buyers.jpg',
+    alt: 'Organized bulk inventory and palletized wholesale products',
+  },
+  'Professional Order Communication': {
+    image: './public/card-media/ecommerce-businesses.jpg',
+    alt: 'Professional digital communication and ecommerce order coordination',
+  },
+  'Flexible Wholesale Purchasing': {
+    image: './public/card-media/general-merchandise-businesses.jpg',
+    alt: 'Flexible assortment of wholesale merchandise for business purchasing',
+  },
+  'Reliable Product Inquiry Process': {
+    image: './public/card-media/online-resellers.jpg',
+    alt: 'Product research, inquiry, and fulfillment workspace',
+  },
+  'Ecommerce-Friendly Supply Support': {
+    image: './public/card-media/ecommerce-businesses.jpg',
+    alt: 'Ecommerce supply support across digital selling channels',
+  },
+  'USA-Based Business': {
+    image: './public/card-media/retail-stores.jpg',
+    alt: 'Professional USA-based retail and wholesale business operation',
+  },
+  'Professional Communication': {
+    image: './public/card-media/ecommerce-businesses.jpg',
+    alt: 'Professional business communication across ecommerce devices',
+  },
+  'Ecommerce-Friendly Purchasing': {
+    image: './public/card-media/amazon-sellers.jpg',
+    alt: 'Ecommerce purchasing workspace with products and fulfillment supplies',
+  },
+  'Bulk Inventory Support': {
+    image: './public/card-media/bulk-inventory-buyers.jpg',
+    alt: 'Warehouse prepared to support bulk inventory purchasing',
+  },
+  'Streamlined Wholesale Process': {
+    image: './public/card-media/online-resellers.jpg',
+    alt: 'Streamlined product processing and online order fulfillment',
+  },
+  'Reliable Business Operations': {
+    image: './public/card-media/general-merchandise-businesses.jpg',
+    alt: 'Reliable wholesale showroom and merchandise operations',
+  },
+  'Browse Product Categories': {
+    image: './public/category-media/general-merchandise.jpg',
+    alt: 'Mixed wholesale products available to browse by category',
+  },
+  'Submit Product Inquiry': {
+    image: './public/card-media/online-resellers.jpg',
+    alt: 'Digital product inquiry and business fulfillment workspace',
+  },
+  'Receive Product Availability & Pricing': {
+    image: './public/card-media/ecommerce-businesses.jpg',
+    alt: 'Digital inventory availability and pricing coordination',
+  },
+  'Order Coordination & Delivery': {
+    image: './public/card-media/bulk-inventory-buyers.jpg',
+    alt: 'Warehouse order coordination, pallets, and delivery preparation',
+  },
+};
+
 const categories = [
   'Health & Household',
   'Grocery & Gourmet',
@@ -149,7 +242,6 @@ const policySections = {
 
 const icons = {
   arrow: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>',
-  check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>',
 };
 
 createApp({
@@ -162,6 +254,7 @@ createApp({
       aboutStrengths,
       industries,
       processSteps,
+      cardMedia,
       categories,
       categoryMedia,
       policySections,
@@ -328,8 +421,9 @@ createApp({
               <h2>Who We Serve</h2>
             </div>
             <div class="card-grid">
-              <article v-for="group in servedGroups" :key="group" class="info-card">
-                <span v-html="icons.check"></span>
+              <article v-for="group in servedGroups" :key="group" class="info-card image-card">
+                <img :src="cardMedia[group].image" :alt="cardMedia[group].alt" loading="lazy" decoding="async" />
+                <div class="image-card-overlay" aria-hidden="true"></div>
                 <h3>{{ group }}</h3>
               </article>
             </div>
@@ -340,8 +434,9 @@ createApp({
               <h2>Why Work With Us</h2>
             </div>
             <div class="card-grid">
-              <article v-for="item in homeStrengths" :key="item" class="info-card dark-card">
-                <span v-html="icons.check"></span>
+              <article v-for="item in homeStrengths" :key="item" class="info-card image-card dark-card">
+                <img :src="cardMedia[item].image" :alt="cardMedia[item].alt" loading="lazy" decoding="async" />
+                <div class="image-card-overlay" aria-hidden="true"></div>
                 <h3>{{ item }}</h3>
               </article>
             </div>
@@ -353,6 +448,8 @@ createApp({
             </div>
             <ol class="process-list">
               <li v-for="(step, index) in processSteps" :key="step">
+                <img :src="cardMedia[step].image" :alt="cardMedia[step].alt" loading="lazy" decoding="async" />
+                <div class="process-overlay" aria-hidden="true"></div>
                 <span>{{ index + 1 }}</span>
                 <p>{{ step }}</p>
               </li>
@@ -366,7 +463,7 @@ createApp({
           </section>
         </section>
 
-        <section v-else-if="currentPage === 'about'" class="page">
+        <section v-else-if="currentPage === 'about'" class="page about-page">
           <div class="page-heading">
             <p class="eyebrow">About us</p>
             <h1>About Varala Commerce LLC</h1>
@@ -385,8 +482,9 @@ createApp({
               <h2>Why Work With Us</h2>
             </div>
             <div class="card-grid">
-              <article v-for="item in aboutStrengths" :key="item" class="info-card">
-                <span v-html="icons.check"></span>
+              <article v-for="item in aboutStrengths" :key="item" class="info-card image-card">
+                <img :src="cardMedia[item].image" :alt="cardMedia[item].alt" loading="lazy" decoding="async" />
+                <div class="image-card-overlay" aria-hidden="true"></div>
                 <h3>{{ item }}</h3>
               </article>
             </div>
@@ -451,7 +549,6 @@ createApp({
               </div>
               <div class="category-card-overlay" aria-hidden="true"></div>
               <div class="category-card-content">
-                <span v-html="icons.check"></span>
                 <h3>{{ category }}</h3>
               </div>
             </article>

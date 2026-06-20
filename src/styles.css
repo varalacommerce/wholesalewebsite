@@ -259,6 +259,10 @@ svg {
   padding-bottom: 0;
 }
 
+.about-page .section.compact {
+  margin-bottom: clamp(52px, 7vw, 88px);
+}
+
 .section-heading,
 .page-heading {
   max-width: 920px;
@@ -290,6 +294,48 @@ svg {
   box-shadow: 0 14px 36px rgba(17, 17, 17, 0.05);
   min-height: 130px;
   padding: 26px;
+}
+
+.info-card {
+  align-items: flex-end;
+  display: flex;
+}
+
+.image-card {
+  isolation: isolate;
+  min-height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-card > img,
+.process-list li > img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 420ms ease;
+  width: 100%;
+  z-index: -2;
+}
+
+.image-card-overlay,
+.process-overlay {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.1), rgba(17, 17, 17, 0.86));
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.image-card h3 {
+  color: var(--white);
+  font-size: 1.18rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
+}
+
+.image-card:hover > img,
+.process-list li:hover > img {
+  transform: scale(1.06);
 }
 
 .category-card {
@@ -441,6 +487,9 @@ svg {
   border-radius: 6px;
   min-height: 170px;
   padding: 24px;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
 }
 
 .process-list span {
@@ -454,12 +503,17 @@ svg {
   justify-content: center;
   margin-bottom: 22px;
   width: 42px;
+  position: relative;
+  z-index: 1;
 }
 
 .process-list p {
-  color: var(--black);
+  color: var(--white);
   font-weight: 800;
   margin: 0;
+  position: relative;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
+  z-index: 1;
 }
 
 .cta-section {
