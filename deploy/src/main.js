@@ -15,10 +15,8 @@ const footerPolicies = [
 ];
 
 const servedGroups = [
-  'Amazon Sellers',
   'Ecommerce Businesses',
   'Retail Stores',
-  'Online Resellers',
   'Bulk Inventory Buyers',
   'General Merchandise Businesses',
 ];
@@ -59,10 +57,6 @@ const processSteps = [
 // Reusable 3D card images. Add or replace JPG files in public/card-media/
 // and update the matching path here to change a card's visual.
 const cardMedia = {
-  'Amazon Sellers': {
-    image: './public/card-media/amazon-sellers.jpg',
-    alt: 'Ecommerce seller workspace with inventory, shipping cartons, and barcode equipment',
-  },
   'Ecommerce Businesses': {
     image: './public/card-media/ecommerce-businesses.jpg',
     alt: 'Multichannel ecommerce workspace with digital storefront devices and packaged products',
@@ -70,10 +64,6 @@ const cardMedia = {
   'Retail Stores': {
     image: './public/card-media/retail-stores.jpg',
     alt: 'Modern retail store with organized shelves, merchandise, and checkout equipment',
-  },
-  'Online Resellers': {
-    image: './public/card-media/online-resellers.jpg',
-    alt: 'Online reseller fulfillment workspace with products, photography equipment, and parcels',
   },
   'Bulk Inventory Buyers': {
     image: './public/card-media/bulk-inventory-buyers.jpg',
